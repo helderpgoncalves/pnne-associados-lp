@@ -113,7 +113,7 @@ export default function SociedadePage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
             {team.map((member) => (
               <div
                 key={member.name}

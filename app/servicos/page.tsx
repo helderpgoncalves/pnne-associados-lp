@@ -45,6 +45,8 @@ export default function ServicosPage() {
       <PageHeader
         title="Serviços"
         description="Competência técnica ao serviço da recuperação processual. Atuamos em todo o território nacional."
+        imageSrc="/images/servicos-header.jpg"
+        imageAlt="Serviços da sociedade de agentes de execução"
       />
 
       {/* Services List */}

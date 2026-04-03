@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { HeroSection } from '@/components/home/hero-section'
 import { AboutPreview } from '@/components/home/about-preview'
 import { ServicesSection } from '@/components/home/services-section'

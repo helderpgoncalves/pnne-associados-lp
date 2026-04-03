@@ -1,11 +1,27 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Scale } from 'lucide-react'
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
+    <section className="relative overflow-hidden text-primary-foreground">
+      <Image
+        src="/images/tingey-injury-law.webp"
+        alt=""
+        fill
+        className="z-0 object-cover"
+        sizes="100vw"
+        priority
+      />
+      <div
+        className="absolute inset-0 z-[1] bg-primary/80 backdrop-blur-[1px]"
+        aria-hidden
+      />
+      <div className="pointer-events-none absolute inset-0 z-[2] opacity-10">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:3rem_3rem]" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-primary-foreground/10">
             <Scale className="h-7 w-7" />
@@ -36,10 +52,6 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
-      </div>
-      {/* Background pattern */}
-      <div className="absolute inset-0 -z-10 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:3rem_3rem]" />
       </div>
     </section>
   )

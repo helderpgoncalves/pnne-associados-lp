@@ -1,18 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Scale } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import heroImage from '@/public/images/justica.webp'
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden text-primary-foreground">
+    <section className="relative overflow-hidden bg-primary text-primary-foreground">
       <Image
-        src="/images/justica.webp"
+        src={heroImage}
         alt=""
         fill
         className="z-0 object-cover"
         sizes="100vw"
         priority
+        placeholder="blur"
       />
       <div
         className="absolute inset-0 z-[1] bg-primary/80 backdrop-blur-[1px]"

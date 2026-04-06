@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { DECORATIVE_IMAGE_BLUR } from '@/lib/image-blur'
 
 interface PageHeaderProps {
   title: string
@@ -17,7 +18,9 @@ export function PageHeader({
   return (
     <section
       className={`relative overflow-hidden border-b border-border py-16 sm:py-20 ${
-        imageSrc ? 'min-h-[280px] sm:min-h-[320px]' : 'bg-secondary'
+        imageSrc
+          ? 'min-h-[280px] bg-primary sm:min-h-[320px]'
+          : 'bg-secondary'
       }`}
     >
       {imageSrc && (
@@ -29,6 +32,8 @@ export function PageHeader({
             className="object-cover"
             sizes="100vw"
             priority
+            placeholder="blur"
+            blurDataURL={DECORATIVE_IMAGE_BLUR}
           />
           <div
             className="absolute inset-0 z-[1] bg-primary/80 backdrop-blur-[1px]"

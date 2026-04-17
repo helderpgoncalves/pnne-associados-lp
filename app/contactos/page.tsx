@@ -65,8 +65,8 @@ export default function ContactosPage() {
               <div className="mt-8 space-y-6">
                 {contactInfo.map((item) => (
                   <div key={item.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <item.icon className="h-5 w-5 text-primary" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                      <item.icon className="h-5 w-5" />
                     </div>
                     <div>
                       <h3 className="font-semibold">{item.title}</h3>
@@ -121,7 +121,7 @@ export default function ContactosPage() {
           <div className="overflow-hidden rounded-xl border border-border bg-muted">
             <div className="flex h-80 items-center justify-center">
               <div className="text-center">
-                <MapPin className="mx-auto h-10 w-10 text-primary/50" />
+                <MapPin className="mx-auto h-10 w-10 text-foreground/55" />
                 <p className="mt-4 text-sm text-muted-foreground">
                   Barcelos, Portugal
                 </p>

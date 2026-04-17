@@ -21,7 +21,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
-              <span className="text-lg font-semibold tracking-tight text-primary">
+              <span className="text-lg font-semibold tracking-tight text-foreground">
                 Patrícia Nibra, Nuno Esteves & Associados SP RL
               </span>
             </Link>

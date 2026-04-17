@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -22,28 +23,90 @@ const navigation = [
   { name: "Contactos", href: "/contactos" },
 ];
 
+const executionAgents = [
+  { name: "Patrícia Nibra", cedula: "5213" },
+  { name: "Nuno Martins Esteves", cedula: "6662" },
+  { name: "A. Amorim Carvalho", cedula: "5166" },
+] as const;
+
+function ExecutionAgentsInfo({
+  align = "center",
+  className,
+  compact = true,
+}: {
+  align?: "left" | "right" | "center";
+  className?: string;
+  compact?: boolean;
+}) {
+  return (
+    <div
+      className={cn(
+        align === "right" && "text-right",
+        align === "left" && "text-left",
+        align === "center" && "text-center",
+        className,
+      )}
+    >
+      <p
+        className={cn(
+          "font-semibold uppercase leading-tight tracking-wide text-foreground",
+          compact
+            ? "text-[0.6875rem] md:text-xs lg:text-sm"
+            : "text-sm sm:text-base",
+        )}
+      >
+        Agentes de Execução
+      </p>
+      <ul
+        className={cn(
+          "mt-1 leading-snug text-muted-foreground",
+          compact
+            ? "space-y-1 text-[0.625rem] md:text-[0.6875rem] lg:text-xs"
+            : "space-y-1 text-sm sm:text-[0.9375rem]",
+        )}
+      >
+        {executionAgents.map((agent) => (
+          <li key={agent.name}>
+            <span className="font-medium text-foreground">{agent.name}</span>
+            <br />
+            <span>Cédula {agent.cedula}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/88 backdrop-blur-md supports-[backdrop-filter]:bg-background/75">
+      <div className="mx-auto flex min-h-20 max-w-6xl items-center justify-between py-2 pl-4 pr-2 sm:min-h-24 sm:pl-6 sm:pr-3 md:min-h-[9rem] md:grid md:grid-cols-[auto_1fr_auto] md:items-center md:gap-2 md:py-3 md:pl-6 md:pr-2 lg:min-h-[10rem] lg:gap-3 lg:pl-7 lg:pr-1 xl:min-h-[10.5rem] xl:pl-8 xl:pr-1">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-lg font-semibold tracking-tight text-primary">
-            PNNE
-          </span>
+        <Link
+          href="/"
+          className="relative block aspect-square w-[3.75rem] shrink-0 justify-self-start sm:w-[4.375rem] md:w-[5.625rem] lg:w-[6.25rem] xl:w-[7.5rem]"
+        >
+          <Image
+            src="/images/logo-pnne.png"
+            alt="P.Nibra, N.Esteves & Associados — Sociedade de Agentes de Execução SP RL"
+            fill
+            className="object-contain object-center"
+            sizes="(max-width: 640px) 60px, (max-width: 768px) 70px, (max-width: 1024px) 90px, (max-width: 1280px) 100px, 120px"
+            priority
+          />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex">
+        {/* Desktop — links centrados entre logótipo e agentes */}
+        <nav className="hidden w-full min-w-0 flex-wrap items-center justify-center gap-x-0.5 gap-y-1 md:flex lg:gap-x-1">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className={cn(
-                "px-3 py-2 text-sm font-medium transition-colors hover:text-foreground",
+                "whitespace-nowrap px-2 py-2 text-sm font-medium transition-colors hover:text-foreground lg:px-3",
                 pathname === item.href
                   ? "text-foreground"
                   : "text-muted-foreground",
@@ -54,16 +117,14 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <Button asChild>
-            <Link href="/contactos">Contactar</Link>
-          </Button>
+        {/* Desktop — agentes de execução (centrado na coluna da direita) */}
+        <div className="hidden max-w-[16rem] shrink-0 justify-self-center md:block lg:max-w-[17.5rem]">
+          <ExecutionAgentsInfo align="center" />
         </div>
 
         {/* Mobile Menu */}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="md:hidden">
+          <SheetTrigger asChild className="shrink-0 justify-self-end md:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Menu</span>
@@ -90,12 +151,15 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="mt-4 px-3">
-                <Button asChild className="w-full">
-                  <Link href="/contactos" onClick={() => setOpen(false)}>
-                    Contactar
-                  </Link>
-                </Button>
+              <div className="mt-6 border-t border-border px-3 pt-6">
+                <ExecutionAgentsInfo align="center" compact={false} />
+                <Link
+                  href="/contactos"
+                  onClick={() => setOpen(false)}
+                  className="mt-4 block text-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
+                >
+                  Página de contactos
+                </Link>
               </div>
             </nav>
           </SheetContent>

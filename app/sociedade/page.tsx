@@ -148,13 +148,13 @@ export default function SociedadePage() {
                 <h3 className="text-lg font-semibold leading-tight">
                   {member.name}
                 </h3>
-                <p className="mt-2 text-pretty text-sm font-medium text-primary">
+                <p className="mt-2 text-pretty text-sm font-medium text-foreground">
                   {member.role}
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground">
+                <p className="mt-1 text-xs text-foreground/75">
                   {member.cedula}
                 </p>
-                <p className="mt-4 text-pretty text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-pretty text-sm leading-relaxed text-foreground/80">
                   {member.bio}
                 </p>
               </div>

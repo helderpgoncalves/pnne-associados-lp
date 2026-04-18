@@ -31,7 +31,8 @@ export function ContactForm() {
         </p>
         <Button
           variant="outline"
-          className="mt-4"
+          size="lg"
+          className="mt-4 w-full sm:w-auto"
           onClick={() => setIsSubmitted(false)}
         >
           Enviar nova mensagem
@@ -76,7 +77,13 @@ export function ContactForm() {
           />
         </Field>
 
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button
+          type="submit"
+          variant="outline"
+          size="lg"
+          className="w-full"
+          disabled={isSubmitting}
+        >
           {isSubmitting ? (
             <>
               <Spinner className="mr-2" />

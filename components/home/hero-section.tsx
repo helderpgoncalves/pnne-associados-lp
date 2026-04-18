@@ -46,22 +46,8 @@ export function HeroSection() {
             Competência, celeridade processual e acompanhamento personalizado -
             ao serviço da recuperação processual.
           </p>
-          {/* <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-primary-foreground/70">
-            Inscrita na OSAE com o número 128, com sede em Barcelos e atuação em todo o território nacional.
-          </p>*/}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            {/* <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-              <Link href="/contactos">
-                Entrar em Contacto
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>*/}
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-            >
+            <Button asChild size="lg" variant="outlineOnPrimary">
               <Link href="/contactos">
                 Entrar em Contacto
                 <ArrowRight className="ml-2 h-4 w-4" />

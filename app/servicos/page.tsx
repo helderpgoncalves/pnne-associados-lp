@@ -122,11 +122,7 @@ export default function ServicosPage() {
                 brevidade e discrição.
               </p>
             </div>
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-            >
+            <Button asChild size="lg" variant="outlineOnPrimary">
               <Link href="/contactos">
                 Contactar Agora
                 <ArrowRight className="ml-2 h-4 w-4" />

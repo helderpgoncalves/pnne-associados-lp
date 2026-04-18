@@ -16,11 +16,7 @@ export function ContactCta() {
               o seu processo. Resposta rápida e tratamento confidencial
               garantidos.
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="mt-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-            >
+            <Button asChild size="lg" variant="outlineOnPrimary" className="mt-8">
               <Link href="/contactos">
                 Fale connosco
                 <ArrowRight className="ml-2 h-4 w-4" />

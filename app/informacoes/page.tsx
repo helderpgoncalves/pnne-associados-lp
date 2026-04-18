@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Informações Úteis | Patrícia Nibra & Nuno Esteves",
@@ -157,12 +158,9 @@ export default function InformacoesPage() {
               Entre em contacto connosco diretamente. Teremos todo o gosto em
               esclarecer a sua situação específica com a atenção que merece.
             </p>
-            <Link
-              href="/contactos"
-              className="mt-6 inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Contactar
-            </Link>
+            <Button asChild size="lg" variant="outline" className="mt-6">
+              <Link href="/contactos">Contactar</Link>
+            </Button>
           </div>
         </div>
       </section>

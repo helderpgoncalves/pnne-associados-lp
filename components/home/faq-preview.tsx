@@ -59,7 +59,7 @@ export function FaqPreview() {
           </Accordion>
 
           <div className="mt-8 text-center">
-            <Button asChild variant="outline">
+            <Button asChild size="lg" variant="outline">
               <Link href="/informacoes">
                 Ver todas as informações
                 <ArrowRight className="ml-2 h-4 w-4" />

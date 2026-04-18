@@ -92,7 +92,7 @@ export default function SociedadePage() {
             <div className="flex h-full min-h-80 justify-center lg:min-h-0">
               <div className="relative h-full min-h-80 w-full max-w-md overflow-hidden rounded-xl shadow-sm ring-1 ring-border">
                 <Image
-                  src="/galo.jpg"
+                  src="/images/galo.jpg"
                   alt="Galo de Barcelos junto à sede da sociedade em Barcelos."
                   fill
                   className="object-cover object-center"
@@ -108,7 +108,7 @@ export default function SociedadePage() {
 
       {/* Missão e Valores — fundo diplomas com parallax (desktop) */}
       <ParallaxSectionBg
-        imageSrc="/diplomas.webp"
+        imageSrc="/images/diplomas.webp"
         className="bg-secondary py-20 sm:py-24"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

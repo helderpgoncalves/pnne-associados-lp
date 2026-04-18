@@ -111,7 +111,7 @@ export default function InformacoesPage() {
 
       {/* Resources Section — fundo sala-arquivo com parallax (desktop) */}
       <ParallaxSectionBg
-        imageSrc="/sala-arquivo.webp"
+        imageSrc="/images/sala-arquivo.webp"
         className="bg-secondary py-20 sm:py-24"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

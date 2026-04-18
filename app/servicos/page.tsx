@@ -82,9 +82,9 @@ export default function ServicosPage() {
         </div>
       </section>
 
-      {/* Como Funciona — fundo livreiro com parallax (desktop) */}
+      {/* Como Funciona — fundo escritório com parallax (desktop) */}
       <ParallaxSectionBg
-        imageSrc="/escritorio.jpg"
+        imageSrc="/images/escritorio.jpg"
         className="bg-secondary py-20 sm:py-24"
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

@@ -47,7 +47,7 @@ function ExecutionAgentsInfo({
         className,
       )}
     >
-      <p
+      {/*<p
         className={cn(
           "font-semibold uppercase leading-tight tracking-wide text-foreground",
           compact
@@ -56,7 +56,7 @@ function ExecutionAgentsInfo({
         )}
       >
         Agentes de Execução
-      </p>
+      </p>*/}
       <ul
         className={cn(
           "mt-1.5 leading-snug text-muted-foreground",

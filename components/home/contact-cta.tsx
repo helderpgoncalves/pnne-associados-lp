@@ -16,7 +16,12 @@ export function ContactCta() {
               o seu processo. Resposta rápida e tratamento confidencial
               garantidos.
             </p>
-            <Button asChild size="lg" variant="outlineOnPrimary" className="mt-8">
+            <Button
+              asChild
+              size="lg"
+              variant="outlineOnPrimary"
+              className="mt-8"
+            >
               <Link href="/contactos">
                 Fale connosco
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -35,7 +40,7 @@ export function ContactCta() {
                   href="tel:+351253814274"
                   className="font-medium transition-colors hover:text-primary-foreground/80"
                 >
-                  253 814 274
+                  +351 253 814 274
                 </a>
               </div>
             </div>

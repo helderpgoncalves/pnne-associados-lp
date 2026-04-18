@@ -21,7 +21,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Telefone",
-    details: ["253 814 274"],
+    details: ["+351 253 814 274"],
   },
   {
     icon: Mail,
@@ -37,6 +37,15 @@ const contactInfo = [
     ],
   },
 ];
+
+const OFFICE_ADDRESS =
+  "Rua D. Diogo Pinheiro, n.º 95, 1.º andar, Sala 102, 4750-282 Barcelos, Portugal";
+
+const MAPS_SEARCH_QUERY = "R. Dom Diogo Pinheiro 95, Barcelos, Portugal";
+
+const googleMapsOpenUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_SEARCH_QUERY)}`;
+
+const googleMapsEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(MAPS_SEARCH_QUERY)}&hl=pt&z=18&output=embed`;
 
 export default function ContactosPage() {
   return (
@@ -115,19 +124,36 @@ export default function ContactosPage() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Mapa — Google Maps (morada em texto + embed + link) */}
       <section className="bg-secondary py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="overflow-hidden rounded-xl border border-border bg-muted">
-            <div className="flex h-80 items-center justify-center">
-              <div className="text-center">
-                <MapPin className="mx-auto h-10 w-10 text-foreground/55" />
-                <p className="mt-4 text-sm text-muted-foreground">
-                  Barcelos, Portugal
-                </p>
-              </div>
-            </div>
+          <h2 className="text-center text-lg font-semibold text-foreground">
+            Como chegar
+          </h2>
+          <p className="mx-auto mt-2 max-w-2xl text-center text-sm text-muted-foreground">
+            {OFFICE_ADDRESS}
+          </p>
+          <div className="mt-6 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+            <iframe
+              title="Mapa — localização do gabinete em Barcelos"
+              src={googleMapsEmbedSrc}
+              className="h-[min(22rem,70vw)] w-full min-h-[16rem] border-0 sm:h-96"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
+          <p className="mt-4 text-center">
+            <a
+              href={googleMapsOpenUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 hover:underline"
+            >
+              <MapPin className="h-4 w-4 shrink-0" aria-hidden />
+              Abrir no Google Maps
+            </a>
+          </p>
         </div>
       </section>
     </>

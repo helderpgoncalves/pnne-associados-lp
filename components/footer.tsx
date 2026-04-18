@@ -58,7 +58,7 @@ export function Footer() {
                   href="tel:+351253814274"
                   className="transition-colors hover:text-foreground"
                 >
-                  253 814 274
+                  +351 253 814 274
                 </a>
               </li>
               <li>Rua D. Diogo Pinheiro, n.º 95, 1.º andar, Sala 102</li>

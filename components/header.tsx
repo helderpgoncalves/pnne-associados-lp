@@ -125,8 +125,8 @@ export function Header() {
         {/* Mobile Menu */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="shrink-0 justify-self-end md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="size-11">
+              <Menu className="size-[2.1875rem]" />
               <span className="sr-only">Menu</span>
             </Button>
           </SheetTrigger>

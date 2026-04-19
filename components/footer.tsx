@@ -73,7 +73,7 @@ export function Footer() {
             © {new Date().getFullYear()} Patrícia Nibra, Nuno Esteves &
             Associados SP RL. Todos os direitos reservados.
           </p>
-          <div className="flex gap-6">
+          {/*<div className="flex gap-6">
             {legalLinks.map((link) => (
               <Link
                 key={link.name}
@@ -83,7 +83,7 @@ export function Footer() {
                 {link.name}
               </Link>
             ))}
-          </div>
+          </div>*/}
         </div>
       </div>
     </footer>

@@ -37,14 +37,11 @@ const services = [
   },
 ];
 
-const QUADRO_BG = "/images/quadro.jpeg";
+const QUADRO_BG = "/images/quadro-balanca.webp";
 
 export function ServicesSection() {
   return (
-    <ParallaxSectionBg
-      imageSrc={QUADRO_BG}
-      className="bg-white py-20 sm:py-24"
-    >
+    <ParallaxSectionBg imageSrc={QUADRO_BG} className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>

@@ -20,7 +20,7 @@ export function PageHeader({
     <section
       className={`relative overflow-hidden border-b border-border py-16 sm:py-20 ${
         imageSrc
-          ? 'min-h-[280px] bg-primary sm:min-h-[320px]'
+          ? 'min-h-[280px] bg-background sm:min-h-[320px]'
           : 'bg-secondary'
       }`}
     >
@@ -40,7 +40,7 @@ export function PageHeader({
             quality={75}
           />
           <div
-            className="absolute inset-0 z-[1] bg-primary/80 backdrop-blur-[1px]"
+            className="absolute inset-0 z-[1] bg-white/72 backdrop-blur-[1px] dark:bg-zinc-950/60"
             aria-hidden
           />
           <div className="pointer-events-none absolute inset-0 z-[2] opacity-10" aria-hidden>

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   ArrowRight,
@@ -6,6 +8,7 @@ import {
   Send,
   MessageCircleQuestion,
 } from "lucide-react";
+import { ParallaxSectionBg } from "@/components/parallax-section-bg";
 
 const services = [
   {
@@ -34,9 +37,14 @@ const services = [
   },
 ];
 
+const QUADRO_BG = "/images/quadro.jpeg";
+
 export function ServicesSection() {
   return (
-    <section className="bg-secondary py-20 sm:py-24">
+    <ParallaxSectionBg
+      imageSrc={QUADRO_BG}
+      className="bg-white py-20 sm:py-24"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
@@ -62,7 +70,7 @@ export function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-foreground/20 hover:shadow-md"
+              className="group rounded-xl border border-border bg-card/95 p-6 shadow-sm backdrop-blur-[0.5px] transition-all hover:border-foreground/20 hover:shadow-md"
             >
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
@@ -79,6 +87,6 @@ export function ServicesSection() {
           ))}
         </div>
       </div>
-    </section>
+    </ParallaxSectionBg>
   );
 }

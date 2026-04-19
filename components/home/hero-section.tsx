@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/public/images/hero-justice.webp";
 import { LcpImagePreload } from "@/components/lcp-image-preload";
+import { DECORATIVE_IMAGE_BLUR } from "@/lib/image-blur";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-primary text-primary-foreground">
+    <section className="relative overflow-hidden bg-background text-primary-foreground">
       <LcpImagePreload href={heroImage.src} />
       <Image
         src={heroImage}
@@ -18,10 +19,11 @@ export function HeroSection() {
         priority
         fetchPriority="high"
         placeholder="blur"
+        blurDataURL={DECORATIVE_IMAGE_BLUR}
         quality={75}
       />
       <div
-        className="absolute inset-0 z-[1] bg-primary/80 backdrop-blur-[1px]"
+        className="absolute inset-0 z-[1] bg-white/72 backdrop-blur-[1px] dark:bg-zinc-950/60"
         aria-hidden
       />
       <div className="pointer-events-none absolute inset-0 z-[2] opacity-10">

@@ -9,6 +9,7 @@ import {
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ParallaxSectionBg } from "@/components/parallax-section-bg";
 
 export const metadata: Metadata = {
   title: "PNNE - Informações Úteis",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "Como iniciar um processo executivo?",  
+    question: "Como iniciar um processo executivo?",
     answer:
       "Para instaurar uma ação executiva é necessário dispor de um título executivo (sentença judicial, contrato com força executiva, livrança, entre outros) e recorrer a um mandatário - advogado ou solicitador - que apresente o requerimento executivo. O Agente de Execução é posteriormente nomeado para tramitar o processo.",
   },
@@ -70,7 +71,7 @@ export default function InformacoesPage() {
     <>
       <PageHeader
         title="Informações Úteis"
-        imageSrc="/images/arquivo.webp"
+        imageSrc="/images/informacoes.webp"
         description="Informação clara para decisões mais seguras. Esclareça as suas dúvidas sobre processos executivos."
       />
 
@@ -108,8 +109,11 @@ export default function InformacoesPage() {
         </div>
       </section>
 
-      {/* Resources Section */}
-      <section className="bg-secondary py-20 sm:py-24">
+      {/* Resources Section — fundo sala-arquivo com parallax (desktop) */}
+      <ParallaxSectionBg
+        imageSrc="/images/sala-arquivo.webp"
+        className="bg-secondary py-20 sm:py-24"
+      >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-2xl font-semibold sm:text-3xl">
@@ -127,7 +131,7 @@ export default function InformacoesPage() {
                   href={resource.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group rounded-xl border border-border bg-card p-6 transition-all hover:border-foreground/20 hover:shadow-md"
+                  className="group rounded-xl border border-border bg-card/95 p-6 shadow-sm backdrop-blur-[0.5px] transition-all hover:border-foreground/20 hover:shadow-md"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
@@ -145,7 +149,7 @@ export default function InformacoesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </ParallaxSectionBg>
 
       {/* Contact CTA */}
       <section className="bg-background py-16 sm:py-20">

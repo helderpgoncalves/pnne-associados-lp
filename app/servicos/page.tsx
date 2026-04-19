@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
+import { ParallaxSectionBg } from "@/components/parallax-section-bg";
 import {
   Gavel,
   FileStack,
@@ -81,8 +82,11 @@ export default function ServicosPage() {
         </div>
       </section>
 
-      {/* How it Works */}
-      <section className="bg-secondary py-20 sm:py-24">
+      {/* Como Funciona — fundo escritório com parallax (desktop) */}
+      <ParallaxSectionBg
+        imageSrc="/images/escritorio.jpg"
+        className="bg-secondary py-20 sm:py-24"
+      >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-pretty text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -99,7 +103,7 @@ export default function ServicosPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step) => (
               <div key={step.number} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl border border-border bg-card text-xl font-semibold">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl border border-border bg-card/95 text-xl font-semibold shadow-sm backdrop-blur-[0.5px]">
                   {step.number}
                 </div>
                 <h3 className="mt-4 font-semibold">{step.title}</h3>
@@ -107,22 +111,22 @@ export default function ServicosPage() {
             ))}
           </div>
         </div>
-      </section>
+      </ParallaxSectionBg>
 
-      {/* CTA */}
-      <section className="bg-primary py-16 text-primary-foreground sm:py-20">
+      {/* CTA — mesmo fundo cinza claro que «Equipa» (Sociedade) */}
+      <section className="bg-background py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
             <div>
               <h2 className="text-2xl font-semibold sm:text-3xl">
                 Precisa dos nossos serviços?
               </h2>
-              <p className="mt-2 text-primary-foreground/80">
+              <p className="mt-2 text-muted-foreground">
                 Contacte-nos para analisarmos a sua situação. Respondemos com
                 brevidade e discrição.
               </p>
             </div>
-            <Button asChild size="lg" variant="outlineOnPrimary">
+            <Button asChild size="lg" variant="outline">
               <Link href="/contactos">
                 Contactar Agora
                 <ArrowRight className="ml-2 h-4 w-4" />

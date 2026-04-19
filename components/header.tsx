@@ -11,7 +11,7 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -33,10 +33,12 @@ function ExecutionAgentsInfo({
   align = "center",
   className,
   compact = true,
+  showTitle = false,
 }: {
   align?: "left" | "right" | "center";
   className?: string;
   compact?: boolean;
+  showTitle?: boolean;
 }) {
   return (
     <div
@@ -47,16 +49,18 @@ function ExecutionAgentsInfo({
         className,
       )}
     >
-      {/*<p
-        className={cn(
-          "font-semibold uppercase leading-tight tracking-wide text-foreground",
-          compact
-            ? "text-xs md:text-sm lg:text-[0.9375rem]"
-            : "text-sm sm:text-base",
-        )}
-      >
-        Agentes de Execução
-      </p>*/}
+      {showTitle ? (
+        <p
+          className={cn(
+            "font-semibold uppercase leading-tight tracking-wide text-foreground",
+            compact
+              ? "text-xs md:text-sm lg:text-[0.9375rem]"
+              : "text-sm sm:text-base",
+          )}
+        >
+          Agentes de Execução
+        </p>
+      ) : null}
       <ul
         className={cn(
           "mt-1.5 leading-snug text-muted-foreground",
@@ -151,15 +155,23 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="mt-6 border-t border-border px-3 pt-6">
-                <ExecutionAgentsInfo align="center" compact={false} />
-                <Link
-                  href="/contactos"
-                  onClick={() => setOpen(false)}
-                  className="mt-4 block text-center text-sm font-medium text-foreground underline-offset-4 hover:underline"
+              <div className="mt-6 flex flex-col items-center border-t border-border px-3 pt-6">
+                <ExecutionAgentsInfo
+                  align="center"
+                  compact={false}
+                  showTitle
+                />
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outlineOnPrimary"
+                  className="mt-8 w-fit"
                 >
-                  Página de contactos
-                </Link>
+                  <Link href="/contactos" onClick={() => setOpen(false)}>
+                    Entrar em Contacto
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </nav>
           </SheetContent>

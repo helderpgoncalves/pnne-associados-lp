@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/public/images/hero-justice.webp";
+import heroImage from "@/public/images/hero-edited-2.jpeg";
 import { LcpImagePreload } from "@/components/lcp-image-preload";
 import { DECORATIVE_IMAGE_BLUR } from "@/lib/image-blur";
 
@@ -20,15 +20,15 @@ export function HeroSection() {
         fetchPriority="high"
         placeholder="blur"
         blurDataURL={DECORATIVE_IMAGE_BLUR}
-        quality={75}
+        quality={100}
       />
-      <div
+      {/*<div
         className="absolute inset-0 z-[1] bg-white/72 backdrop-blur-[1px] dark:bg-zinc-950/60"
         aria-hidden
       />
       <div className="pointer-events-none absolute inset-0 z-[2] opacity-10">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:3rem_3rem]" />
-      </div>
+      </div>*/}
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-5xl text-center">
           {/* <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-primary-foreground/10">

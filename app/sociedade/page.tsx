@@ -175,6 +175,22 @@ export default function SociedadePage() {
             ))}
           </div>
         </div>
+        <div className="mx-auto max-w-3xl text-center">
+          <br />
+          <br />
+          <br />
+          <h2 className="text-pretty text-3xl font-semibold tracking-tight sm:text-4xl">
+            Dedicação e Conhecimento
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground">
+            A sociedade dispõe de uma equipa multidisciplinar, composta por
+            profissionais qualificados, com colaboradores jovens, dinâmicos e
+            devidamente preparados, com experiência em diversas áreas, desde os
+            funcionários forenses, a licenciados em Solicitadoria e Direito,
+            garantindo um serviço rigoroso, profissional e orientado para o
+            cliente.
+          </p>
+        </div>
       </section>
     </>
   );

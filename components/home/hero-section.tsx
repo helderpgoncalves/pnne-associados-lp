@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/public/images/hero-edited-2.jpeg";
 import { LcpImagePreload } from "@/components/lcp-image-preload";
-import { DECORATIVE_IMAGE_BLUR } from "@/lib/image-blur";
 
 export function HeroSection() {
   return (
@@ -18,8 +17,6 @@ export function HeroSection() {
         sizes="(max-width: 1920px) 100vw, 1920px"
         priority
         fetchPriority="high"
-        placeholder="blur"
-        blurDataURL={DECORATIVE_IMAGE_BLUR}
         quality={100}
       />
       {/*<div

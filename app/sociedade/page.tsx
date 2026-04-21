@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "@/components/page-header";
 import { ParallaxSectionBg } from "@/components/parallax-section-bg";
-import { DECORATIVE_IMAGE_BLUR } from "@/lib/image-blur";
 import { Target, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -97,8 +96,6 @@ export default function SociedadePage() {
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 28rem"
-                  placeholder="blur"
-                  blurDataURL={DECORATIVE_IMAGE_BLUR}
                 />
               </div>
             </div>

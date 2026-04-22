@@ -34,7 +34,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold">Navegação</h3>
+            <h3 className="text-sm font-semibold">Explorar</h3>
             <ul className="mt-4 space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>

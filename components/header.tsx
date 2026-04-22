@@ -135,9 +135,9 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[280px]">
-            <SheetTitle className="sr-only">Menu de navegação</SheetTitle>
+            <SheetTitle className="sr-only">Explorar</SheetTitle>
             <SheetDescription className="sr-only">
-              Navegue pelas páginas do site
+              Explorar as páginas do site
             </SheetDescription>
             <nav className="mt-8 flex flex-col gap-1">
               {navigation.map((item) => (
@@ -156,11 +156,7 @@ export function Header() {
                 </Link>
               ))}
               <div className="mt-6 flex flex-col items-center border-t border-border px-3 pt-6">
-                <ExecutionAgentsInfo
-                  align="center"
-                  compact={false}
-                  showTitle
-                />
+                <ExecutionAgentsInfo align="center" compact={false} showTitle />
                 <Button
                   asChild
                   size="lg"
